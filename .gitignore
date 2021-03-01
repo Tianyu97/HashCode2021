@@ -5,3 +5,5 @@
 *.ids
 *.orig
 .out/
+.DS_Store
+src/DS_Store
