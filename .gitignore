@@ -4,4 +4,4 @@
 *.ipr
 *.ids
 *.orig
-out/
+.out/
