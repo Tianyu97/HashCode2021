@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.*;
-public class ScheduleLight {
+public class Main {
     public static void main(String[] args) {
         Description data = readFile("a.txt");
         List<Car> waitCarList = new ArrayList<>();
@@ -83,7 +83,7 @@ public class ScheduleLight {
                     int intersection_2 = Integer.parseInt(strArr[1]);
                     String name = strArr[2];
                     int timePass = Integer.parseInt(strArr[3]);
-                    Street street = new Street(intersection_1, intersection_2, name, timePass);
+                    Street street = new Street(name, timePass);
                     // add to street list
                     Intersection startIntersection = intersectionMap.getOrDefault(intersection_1, new Intersection(intersection_1));
                     intersectionMap.put(intersection_1, startIntersection);
