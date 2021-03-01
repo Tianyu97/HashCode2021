@@ -55,6 +55,19 @@ public class Main {
                 minTime = streetMap.get(st).greenTime;
             }
         }
+        for (int i = 0; i < intersectionList.size(); i++) {
+            for (int j = 0; j < intersectionList.get(i).income.size(); j++) {
+                String s = intersectionList.get(i).income.get(j);
+                if (streetMap.get(s).greenTime == 0) {
+                    intersectionList.get(i).income.remove(j);
+                    j--;
+                }
+            }
+            if (intersectionList.get(i).income.size() == 0) {
+                intersectionList.remove(i);
+                i--;
+            }
+        }
         writeFile(minTime, intersectionList, streetMap);
     }
 
@@ -69,7 +82,6 @@ public class Main {
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName));
             String line = bufferedReader.readLine();
-
 
             while (line != null) {
                 String[] strArr = line.split(" ");
